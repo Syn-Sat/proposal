@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+.container {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  color: #ff3b6f;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 28px;
+  color: #333;
+}
+
+.buttons {
+  margin-top: 40px;
+  position: relative;
+  height: 260px;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 26px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#yes {
+  background-color: #ff3b6f;
+  color: white;
+  transform: translateX(-60%);
+}
+
+#yes.pulse {
+  animation: pulse 0.6s infinite alternate;
+}
+
+#no {
+  background-color: #ddd;
+  color: #333;
+  transform: translateX(20%);
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 rgba(255, 59, 111, 0.4);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(255, 59, 111, 0.9);
+  }
+}
+
+#message {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  color: #ff3b6f;
+  font-weight: bold;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  font-size: 28px;
+  color: #ff4d6d;
+  animation: floatUp 1.2s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.6);
+  }
+}
